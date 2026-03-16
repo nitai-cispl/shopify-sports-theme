@@ -1,0 +1,167 @@
+/* ============================================================
+   SportMart — Custom CSS (extends Bootstrap 4)
+   Matches MultiShop layout & style, adapted for Sports
+   ============================================================ */
+
+/* ── Google Font ── */
+body { font-family: 'Roboto', sans-serif; }
+
+/* ── Primary color overrides (Bootstrap primary = blue #007bff) ── */
+/* Keep Bootstrap's default blue — it matches MultiShop exactly */
+
+/* ── Section title style (identical to MultiShop) ── */
+.section-title::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 1px;
+    top: 50%;
+    left: 0;
+    background: #dee2e6;
+}
+.section-title span {
+    position: relative;
+    z-index: 1;
+}
+
+/* ── Spacing util ── */
+.mb-30 { margin-bottom: 30px; }
+
+/* ── Product card (identical to MultiShop) ── */
+.product-item {
+    border: 1px solid #f0f0f0;
+}
+.product-img {
+    min-height: 180px;
+}
+.product-action {
+    position: absolute;
+    bottom: -46px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    background: rgba(255,255,255,0.95);
+    transition: bottom 0.3s ease;
+    padding: 4px;
+    gap: 4px;
+}
+.product-item:hover .product-action {
+    bottom: 0;
+}
+.btn-square {
+    width: 38px;
+    height: 38px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0 !important;
+}
+
+/* ── Category item ── */
+.cat-item {
+    padding: 15px;
+    background: #f8f9fa;
+    border: 1px solid #f0f0f0;
+    transition: all 0.3s;
+}
+.cat-item:hover {
+    background: #fff;
+    box-shadow: 0 2px 12px rgba(0,123,255,0.12);
+    transform: translateY(-2px);
+}
+
+/* ── Carousel caption override ── */
+.carousel-caption {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    text-align: left;
+    padding: 0;
+}
+
+/* ── Offer banner ── */
+.product-offer {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+.product-offer:hover { transform: scale(1.02); }
+.offer-text {
+    position: relative;
+    z-index: 2;
+}
+
+/* ── Navbar vertical (Categories dropdown) ── */
+#navbar-vertical { max-height: 400px; overflow-y: auto; }
+#navbar-vertical .nav-link { padding: 10px 30px; border-bottom: 1px solid #f0f0f0; }
+#navbar-vertical .nav-link:hover { color: #007bff; }
+#navbar-vertical .dropdown-menu { top: 0; left: 100%; margin-top: 0; min-width: 160px; }
+
+/* ── Nav tabs for featured products ── */
+.nav-tabs .nav-link {
+    border-radius: 0;
+    font-size: 13px;
+    padding: 8px 16px;
+    color: #555;
+}
+.nav-tabs .nav-link.active {
+    color: #007bff;
+    border-top: 2px solid #007bff;
+    font-weight: 700;
+}
+.nav-tabs .nav-link:hover { color: #007bff; }
+
+/* ── Brand item hover ── */
+.brand-item > div { transition: all 0.3s; }
+.brand-item > div:hover {
+    border-color: #007bff !important;
+    box-shadow: 0 2px 10px rgba(0,123,255,0.15);
+    transform: translateY(-2px);
+}
+
+/* ── Topbar ── */
+.bg-secondary { background-color: #f3f3f3 !important; }
+
+/* ── Font-weight util ── */
+.font-weight-semi-bold { font-weight: 600; }
+
+/* ── Shop sidebar (used in shop.html) ── */
+.filter-section { margin-bottom: 30px; }
+
+/* ── Price badge ── */
+.badge-discount {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 1;
+}
+
+/* ── Star ratings ── */
+.stars-display { color: #007bff; letter-spacing: 1px; }
+
+/* ── Mobile responsive ── */
+@media (max-width: 768px) {
+    .hero-sport-icon { display: none; }
+    .carousel-caption h1 { font-size: 1.8rem; }
+    .carousel-caption p { display: none; }
+    .cat-item { padding: 10px; }
+    .cat-item .overflow-hidden { width: 70px !important; height: 70px !important; }
+}
+
+/* ── Search bar select ── */
+.input-group .custom-select {
+    border-right: 0;
+    border-radius: 4px 0 0 4px;
+    background-color: #f8f9fa;
+    font-size: 13px;
+}
+
+/* ── Footer link hover ── */
+footer a:hover { color: #007bff !important; text-decoration: none; }
+
+/* ── Smooth transitions ── */
+a, button, .product-item, .cat-item { transition: all 0.25s; }
